@@ -3,7 +3,7 @@ Generate diverse text datasets with few clicks in Python
 
 ## Datasets included 
 
-| Source Name                                                    | Num texts | Avg words per text |
+| Source Name                                                    | Num texts | Avg. num words per text |
 |----------------------------------------------------------------|-----------|--------------------|
 | [ellipse_corpus](https://github.com/scrosseye/ELLIPSE-Corpus)  | 6482      | 458       |
 | [imdb_movie_reviews_dataset](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews) | 50000     | 231         |
