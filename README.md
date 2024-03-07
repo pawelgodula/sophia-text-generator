@@ -9,7 +9,7 @@ Generate diverse text datasets with few clicks in Python
 | [imdb_movie_reviews_dataset](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews) | 50000     | 231         |
 | [kids.frontiersin.org](https://www.frontiersin.org/about/open-access) | 685       | 1908     |
 | [online_course_corpus](https://www.kaggle.com/competitions/pii-detection-removal-from-educational-data/data) | 6807      | 635         |
-| [persuade_corpus](https://github.com/scrosseye/persuade_corpus_2.0) | 25996     | 418.129597         |
+| [persuade_corpus](https://github.com/scrosseye/persuade_corpus_2.0) | 25996     | 418      |
 | [webtext_gpt2](https://github.com/openai/gpt-2-output-dataset) | 250000    | 424        |
 | [wikipedia](https://www.kaggle.com/datasets/jjinho/wikipedia-20230701) | 26000     | 498        |
 
