@@ -1,5 +1,17 @@
 # sophia-text-gen
-Generate diverse text datasets with few clicks in Python
+Generate diverse text datasets with few clicks in Python on Kaggle notebooks
+
+## Idea
+Simple generation of diverse texts on Kaggle notebooks with the latest & greatest open-source LLMs.
+
+Recently all major LLM Kaggle competitions rely on participants to create a training dataset. I find more & more Kagglers are sharing great datasets - so I thought I would build something to enable everyone to build their training dataset on Kaggle infra. Let's unleash everyone's prompt creativity!
+
+- Simplicity & Performance: Sophia is a wrapper for text generation with the top Open Source LLMs from [LLM arena](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard) that fit into Kaggle infra and exist on HF. For now it supports the following models:
+-
+- It builds on a great work of many Kagglers who shown how to integrate particular models:
+- Create diversity in train datasets for Kaggle competitions by:
+- Pre-existing library of texts (see below in Datasets included)
+- Providing 
 
 ## Datasets included 
 
