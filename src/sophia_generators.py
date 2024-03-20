@@ -147,7 +147,7 @@ class sophia_text_generator():
             Please return nothing but the text."""
             prompt += prompt_persona
         if use_external_texts:
-            current_text = np.random.choice(writer.ext_texts.text.values)
+            current_text = np.random.choice(self.ext_texts.text.values)
             prompt_text = f"""
             Source text: {current_text}
             """
