@@ -3,6 +3,8 @@ import keras
 import keras_nlp
 import pandas as pd
 import numpy as np
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 
 class sophia_text_generator():
     def __init__(self, model_alias, device = 'gpu', use_quantization = True):
