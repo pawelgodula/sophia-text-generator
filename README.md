@@ -1,4 +1,4 @@
-# sophia-text-gen
+# sophia-text-generator
 Generate diverse text datasets with few clicks in Python on Kaggle notebooks
 
 ## Idea
