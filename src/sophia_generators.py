@@ -211,7 +211,7 @@ class sophia_text_generator():
     
     def write_with_gemma(self, prompt, params):
         input_ids = self.tokenizer(prompt, return_tensors="pt").to("cuda")
-        if self.model_alias == 'gemma-7b':
+        if 'gemma-7b' in self.model_alias:
             params['do_sample'] = False
         outputs = self.model.generate(**input_ids, **params)
         response_text = self.tokenizer.decode(outputs[0])
