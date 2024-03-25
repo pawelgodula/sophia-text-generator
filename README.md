@@ -14,7 +14,7 @@ The tutorial notebooks are here:
 ```
 from sophia_generators import sophia_text_generator
 writer = sophia_text_generator("gemma-7b-it", device = 'tpu')
-texts = writer.write_content('Write an essay on design thinking consisting of 100-200 words.', n_texts = 1)
+content = writer.write_content('Write an essay on design thinking consisting of 100-200 words.', n_texts = 1)
 ```
 
 ### Supports GPU and TPU
@@ -36,8 +36,11 @@ TPU:
 - Gemma 7B
 - Gemma 7B it
 
-### Supports text generation using personas from Wikipedia (all characters, real or fictional, described in Wikipedia)
-LLMs are trained on Wikipedia so they have the necessary context to create personalized point of view.
+### Supports text generation using personas from Wikipedia 
+
+LLMs are trained on Wikipedia so they have the necessary context to create a personalized point of view. You can ask any character, real or fictional, included in Wikipedia as of July 2023, for opinion (by default Sophia samples the characters at random): 
+
+Example:
 ```
 content = writer.write_content(prompt, n_texts = 3, use_personas = True, params = params)
 ```
@@ -53,9 +56,25 @@ Prototyping, they claim, is about testing and refining our ideas. But what happe
 
 Design thinking, I believe, is a futile attempt to solve real-world problems. It's a reductionist approach that oversimplifies the complexities of human experience. It's a process that prioritizes convenience and profitability over genuine impact.
 ```
+
+### Supports using custom personas 
+Maybe there is someone specific you would like to ask for opinion: 
+
+Example:
+```
+writer.set_personas(["Palpably mighty Sauron",                     
+                     "Female Merchant living in 10th century Bagan, Myanmar",
+                     "Deeply scientific Marie Curie-Sklodowska"])
+content = writer.write_content(prompt, n_texts = 3, use_personas = True, params = params)
+```
+Result:
+```
+'.\n\nAarrgh! This pesky design thinking! It\'s as if a plague of orcs has infested my perfect realm of Mordor. The mere mention of it irks me to my core.\n\nYou see, I, Sauron, am the embodiment of pure, unadulterated evil. My sole goal is domination – not some flippant, ever-changing user experience! My minions and I do not care for the shallow gratification of satisfying the whims of inferior beings.\n\nBut, alas, this design thinking, as you call it, has tainted the minds of my followers. I hear them murmuring about "empathy" and " iteration". As if I, Sauron, would condescend to cater to the fleeting, inane desires of humans!\n\nThis nonsense is a threat to the natural order of things. Design thinking is a misguided attempt to humanize the dark, cold world of programming and engineering. I want nothing more than to purge this heresy from the minds of my subjects and reassert my dominance.\n\nI am the master of all that is dark and malevolent. I will not abide by the ridiculous, senseless constraints of empathy and user-centered design. I seek power, control, and eternal reign, not the fleeting satisfaction of some feeble human mind.\n\nIn the end, I will crush this design thinking and all who dare to spread its vile contagion. Mordor will remain the cold, unfeeling, merciless realm it was always meant to be.\n\nBah! Spare me your platitudes and your whimsical design thinking. I am Sauron, the Dark Lord, and I will be obeyed
+```
+
 ### Supports text generation in response to already existing texts
 
-#### Datasets included 
+I've gathered a library of texts that may be used as an inspiration for the content generation:
 
 | Source Name                                                    | Num texts | Avg. num words per text |
 |----------------------------------------------------------------|-----------|--------------------|
@@ -67,16 +86,28 @@ Design thinking, I believe, is a futile attempt to solve real-world problems. It
 | [webtext_gpt2](https://github.com/openai/gpt-2-output-dataset) | 250000    | 424        |
 | [wikipedia](https://www.kaggle.com/datasets/jjinho/wikipedia-20230701) | 26000     | 498        |
 
+Example:
+```
+prompt = "Write an essay of 100-200 words that disagrees with the given text."
+content = writer.write_content(prompt, n_texts = 2, use_personas = True, use_external_texts=True, params = params)
+```
+
 ## Acknowledgements
 Sophia builds on the prior work of many people who worked hard to run LLMs on Kaggle infra. In particular, I would like to mention two notebooks and their authors:
-
+- [Paul Moooney](https://www.kaggle.com/code/paultimothymooney/how-to-use-mistral-from-kaggle-models)
+- [Darien Schettler] (https://www.kaggle.com/code/dschettler8845/tpu-gemma-instruct-7b-llm-prompt-recovery)
+  
 ## Other comments
 
 ### Sophia works on Kaggle notebooks
 Kaggle notebooks have specific packages installed that make it possible to use LLMs easily. If you'd like to run it on any custom machine, the easiest way would be to clone the libraries and their versions from Kaggle environment.   
 
-## Environment
-Trying to make it work for all LLMs in a single notebook was challenging also because of the dependency hell. For now, it is pinned to the one environment version I found to work from [this notebook](https://www.kaggle.com/code/paultimothymooney/how-to-use-mistral-from-kaggle-models). 
+### Environment versions
+GPU:
 
+Trying to make it work for all LLMs in a single notebook was challenging also because of the dependency hell. For now, it is pinned to the one environment version I found to work from [this notebook](https://www.kaggle.com/code/paultimothymooney/how-to-use-mistral-from-kaggle-models). 
 If you switch to the latest environment you will get the dreaded
 `RuntimeError: cutlassF: no kernel found to launch!`
+
+TPU: 
+Uses tha latest version of the environment.
