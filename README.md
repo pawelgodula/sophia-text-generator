@@ -47,15 +47,15 @@ content = writer.write_content(prompt, n_texts = 3, use_personas = True, params 
 ```
 Result:
 ```
-As Guy Degrenne, the Overwhelmingly Disheartened, I've spent years observing the design thinking community with a heavy heart. I've watched as they've embraced empathy, ideation, and prototyping with open arms. I've listened to their passionate speeches about creating user-centered solutions to real-world problems. But as I look around, I can't help but feel that design thinking, with all its promise, has failed us.
+As Contemplating Aristotle, I ponder the art of creation, the crafting of objects and experiences that bring harmony to the human condition. In my contemplation, I have come to appreciate the methodology of design thinking as a means to foster innovation and improve the world around us.
 
-Empathy, they say, is the foundation of design thinking. But how can we truly understand the complexities of human emotions and experiences through a few interviews and observations? How can we reduce the intricacies of a problem to a neat, tidy design solution?
+Design thinking, my dear friends, is a process rooted in empathy and understanding. It is an approach to problem-solving that seeks to put the user at the center of the design process. This, to me, is a noble pursuit, for it echoes the very essence of my teachings. I believe that the ultimate goal of any design should be to serve the needs of the people.
 
-Ideation, they tell us, is about generating a multitude of ideas. But isn't that just a fancy way of saying brainstorming? And how many brilliant ideas have been lost in the pursuit of the most feasible or profitable solution?
+Yet, I also recognize that design thinking is not without its controversies. Some argue that it is a fad, a trendy buzzword that lacks the substance of true philosophical inquiry. Others decry its focus on the user at the expense of the greater good.
 
-Prototyping, they claim, is about testing and refining our ideas. But what happens when our prototypes don't solve the root cause of the problem? What happens when they merely scratch the surface, providing a temporary band-aid to a deep-rooted issue?
+But I, Contemplating Aristotle, believe that design thinking is a valuable tool in our quest for a better world. It encourages us to ask the right questions, to challenge assumptions, and to seek out new perspectives. It calls upon us to be curious, to learn, and to grow.
 
-Design thinking, I believe, is a futile attempt to solve real-world problems. It's a reductionist approach that oversimplifies the complexities of human experience. It's a process that prioritizes convenience and profitability over genuine impact.
+In the end, design thinking is not just a methodology, but a mindset. It is a way of approaching the world with a sense of wonder and a commitment to improving the human experience. And as I contemplate the world around me, I find great comfort in the knowledge that design thinking is a powerful force for good, one that will continue to shape and transform our world for generations to come.</s>
 ```
 
 ### Supports using custom personas 
