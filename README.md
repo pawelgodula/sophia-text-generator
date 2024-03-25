@@ -101,7 +101,7 @@ content = writer.write_content(prompt, n_texts = 2, use_personas = True, use_ext
 ## Acknowledgements
 Sophia builds on the prior work of many people who worked hard to run LLMs on Kaggle infra. In particular, I would like to mention two notebooks and their authors:
 - [Paul Moooney](https://www.kaggle.com/code/paultimothymooney/how-to-use-mistral-from-kaggle-models)
-- [Darien Schettler] (https://www.kaggle.com/code/dschettler8845/tpu-gemma-instruct-7b-llm-prompt-recovery)
+- [Darien Schettler](https://www.kaggle.com/code/dschettler8845/tpu-gemma-instruct-7b-llm-prompt-recovery)
   
 ## Other comments
 
