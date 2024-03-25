@@ -9,7 +9,7 @@ The tutorial notebooks are here:
 
 ## Key features: 
 
-### 0. It is simple
+### It is simple
 
 ```
 from sophia_generators import sophia_text_generator
@@ -17,25 +17,43 @@ writer = sophia_text_generator("gemma-7b-it", device = 'tpu')
 texts = writer.write_content('Write an essay on design thinking consisting of 100-200 words.', n_texts = 1)
 ```
 
-### 1. Supports GPU and TPU
+### Supports GPU and TPU
 To maximize quota utilization
 
-### 2. Supports the best open source models (according to [LLM arena](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard)) that fit into the Kaggle infra:
+### Supports the best open source models (according to [LLM arena](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard)) that fit into the Kaggle infra:
 
 GPU:
 - Mixtral 8 X 7B
-- Mistral 7B v0.1
-- Mistral 7B v0.2
+- Mistral 7B it v0.1
+- Mistral 7B it v0.2
 - Starling 7B
 - Gemma 2B
+- Gemma 2B it
 
 TPU:
-- Gemma 2B & 7B
+- Gemma 2B
+- Gemma 2B it
+- Gemma 7B
+- Gemma 7B it
 
-### 3. Supports text generation using personas from Wikipedia (all characters, real or fictional, described in Wikipedia)
-How would you 
+### Supports text generation using personas from Wikipedia (all characters, real or fictional, described in Wikipedia)
+LLMs are trained on Wikipedia so they have the necessary context to create personalized point of view.
+```
+content = writer.write_content(prompt, n_texts = 3, use_personas = True, params = params)
+```
+Result:
+```
+As Guy Degrenne, the Overwhelmingly Disheartened, I've spent years observing the design thinking community with a heavy heart. I've watched as they've embraced empathy, ideation, and prototyping with open arms. I've listened to their passionate speeches about creating user-centered solutions to real-world problems. But as I look around, I can't help but feel that design thinking, with all its promise, has failed us.
 
-### 4. Supports text generation in response to already existing texts
+Empathy, they say, is the foundation of design thinking. But how can we truly understand the complexities of human emotions and experiences through a few interviews and observations? How can we reduce the intricacies of a problem to a neat, tidy design solution?
+
+Ideation, they tell us, is about generating a multitude of ideas. But isn't that just a fancy way of saying brainstorming? And how many brilliant ideas have been lost in the pursuit of the most feasible or profitable solution?
+
+Prototyping, they claim, is about testing and refining our ideas. But what happens when our prototypes don't solve the root cause of the problem? What happens when they merely scratch the surface, providing a temporary band-aid to a deep-rooted issue?
+
+Design thinking, I believe, is a futile attempt to solve real-world problems. It's a reductionist approach that oversimplifies the complexities of human experience. It's a process that prioritizes convenience and profitability over genuine impact.
+```
+### Supports text generation in response to already existing texts
 
 #### Datasets included 
 
