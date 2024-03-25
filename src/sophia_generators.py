@@ -56,13 +56,12 @@ class sophia_text_generator():
     
     def set_model_name(self, model_alias, device): 
         gpu_models = {
-            'mistral': "/kaggle/input/mistral/pytorch/7b-instruct-v0.1-hf/1",
+            'mistral-7b-it': "/kaggle/input/mistral/pytorch/7b-instruct-v0.1-hf/1",
+            'mistral-7bv2-it: "mistralai/Mistral-7B-Instruct-v0.2",
             'mixtral': '/kaggle/input/mixtral/pytorch/8x7b-instruct-v0.1-hf/1',
             'starling': "berkeley-nest/Starling-LM-7B-alpha",
             'gemma-2b': "/kaggle/input/gemma/transformers/2b/1",
-            'gemma-7b': "/kaggle/input/gemma/transformers/7b/1",
-            'gemma-2b-it': "/kaggle/input/gemma/transformers/2b-it/1",
-            'gemma-7b-it': "/kaggle/input/gemma/transformers/7b-it/1",
+            'gemma-2b-it': "/kaggle/input/gemma/transformers/2b-it/1"
         }
 
         tpu_models = {
