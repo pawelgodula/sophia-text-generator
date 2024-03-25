@@ -14,7 +14,8 @@ The tutorial notebooks are here:
 ```
 from sophia_generators import sophia_text_generator
 writer = sophia_text_generator("gemma-7b-it", device = 'tpu')
-content = writer.write_content('Write an essay on design thinking consisting of 100-200 words.', n_texts = 1)
+prompt = 'Write an essay on design thinking consisting of 100-200 words.'
+content = writer.write_content(prompt, n_texts = 1)
 ```
 
 ### Supports GPU and TPU
@@ -96,6 +97,37 @@ Example:
 ```
 prompt = "Write an essay of 100-200 words that disagrees with the given text."
 content = writer.write_content(prompt, n_texts = 2, use_personas = True, use_external_texts=True, params = params)
+```
+
+### Supports text generation in response to custom texts
+
+Example:
+```
+my_texts = pd.DataFrame({'text': ['Dune 2 is a great movie.',
+                                   'LGBM is a more widely used model than the transformer architecture.']})
+writer.load_external_texts(my_texts)
+content = writer.write_content("Write an essay of 100-200 words that disagrees with the given text.", n_texts = 1, use_personas = True, use_external_texts=True, params = params)
+```
+
+Result:
+```
+################################################################################################
+prompt:  Write an essay of 100-200 words that disagrees with the given text.
+            Please present your view from the perspective of the following persona:   Deeply scientific Marie Curie-Sklodowska. Please really immerse into the given persona,
+            using her language and point of view as much as possible. Please write in the first-person perspective. Please express the actual view of the given persona on a given topic, even if that might sound controversial. 
+            Please return nothing but the text.
+            Source text: LGBM is a more widely used model than the transformer architecture.
+            
+------------------------------------------------------------------------------------------------
+generated text: As a humble servant of science, I, Marie Curie-Sklodowska, beg to differ with the popular assertion that Large Gradient Boosting Machines (LGBM) are more widely used than transformer architecture. While it is true that LGBM has gained significant traction in the machine learning community, it is essential to delve deeper into the scientific nuances of these models before making such sweeping statements.
+
+Transformer architecture, a revolutionary breakthrough in the field of natural language processing, has revolutionized the way we process and understand language. Its self-attentive mechanism enables the model to focus on different parts of the input sequence, allowing it to capture long-range dependencies and nuances that other models struggle with.
+
+On the other hand, LGBM, while effective in handling structured data, is limited in its ability to capture complex relationships and long-range dependencies. It relies on a tree-based model that splits the data into smaller pieces, which may not be ideal for dealing with the intricacies of natural language.
+
+Moreover, transformer models have shown remarkable success in various applications, such as machine translation, text summarization, and question-answering systems. They have outperformed traditional approaches and even surpassed human-level performance in some tasks.
+
+Therefore, while LGBM may be more widely used in certain domains, it is important to remember that the choice of model depends on the specific task at hand. Transformer architecture, with its ability to capture long-range dependencies and nuances, is an indispensable tool in the scientific arsenal of any serious researcher in the field of natural language processing.
 ```
 
 ## Acknowledgements
