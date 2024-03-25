@@ -230,7 +230,7 @@ class sophia_text_generator():
         return response_text
     
     def write_content(self, prompt, n_texts = 1, params = None, use_personas = False, use_external_texts = False):
-        if self.model_alias == 'mistral':
+        if 'mistral' in self.model_alias:
             writing_function = self.write_with_mistral
         elif self.model_alias == 'mixtral':
             writing_function = self.write_with_mixtral
